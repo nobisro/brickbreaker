@@ -6,6 +6,7 @@ function Brick() {
     this.display = function() {
         push();
         translate(this.pos.x, this.pos.y);
+        noStroke();
         fill(0, 206, 209, 100);
         beginShape();
         for(let i = 0; i < this.total; i++) {

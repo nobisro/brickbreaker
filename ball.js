@@ -5,7 +5,8 @@ function Ball() {
     this.vel = createVector(1, 1).mult(4);
 
     this.display = function() {
-        fill(255, 0, 0, 200);
+        noStroke();
+        fill(255, 0, 0);
         ellipse(this.pos.x, this.pos.y, this.r * 2, this.r * 2);
     }
 

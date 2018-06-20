@@ -5,10 +5,11 @@ function Paddle() {
     this.isMovingLeft = false;
     this.isMovingRight = false;
 
-    this.pos = createVector(width / 2, height - 40);
+    this.pos = createVector(width / 2, height - 50);
     //what does createVector do?
 
     this.display = function() {
+        noStroke();
         fill(123, 104, 238, 100);
         rect(this.pos.x, this.pos.y, this.w, this.h);
         //this.pos.x?
@@ -22,7 +23,7 @@ function Paddle() {
         if (this.isMovingRight) {
             this.move(20)
         } else if (this.isMovingLeft) {
-            this.move(-20);
+            this.move(-15);
         }
     }
 

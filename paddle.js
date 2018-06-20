@@ -9,6 +9,7 @@ function Paddle() {
     //what does createVector do?
 
     this.display = function() {
+        fill(123, 104, 238, 100);
         rect(this.pos.x, this.pos.y, this.w, this.h);
         //this.pos.x?
     }

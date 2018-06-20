@@ -6,6 +6,7 @@ function Brick() {
     this.display = function() {
         push();
         translate(this.pos.x, this.pos.y);
+        fill(0, 206, 209, 100);
         beginShape();
         for(let i = 0; i < this.total; i++) {
             let angle = map(i, 0, this.total, 0, TWO_PI);

@@ -1,10 +1,15 @@
 let paddle;
 let ball;
+let bricks = [];
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
     paddle = new Paddle();
     ball = new Ball();
+
+    for (let i = 0; i < 20; i++) {
+        bricks.push(new Brick());
+    }
 }
 
 function draw() {
@@ -22,6 +27,17 @@ function draw() {
         ball.direction.y *= -1;
     }
 
+    for (let j = 0; j < bricks.length; j++) {
+        if (ball.hits(bricks[j])) {
+            if (bricks[j].r > 40) {
+                bricks[j].r = bricks[j].r /2
+            } else {
+                bricks.splice(j, 1); 
+            }
+            ball.direction.y *= -1;
+        }
+        bricks[j].display();
+    }
 }
 
 function keyPressed() {
